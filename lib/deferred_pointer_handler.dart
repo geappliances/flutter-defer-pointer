@@ -39,6 +39,12 @@ class DeferredPointerHandlerState extends State<DeferredPointerHandler> {
       child: _DeferredHitTargetRenderObjectWidget(link: widget.link ?? _link, child: widget.child),
     );
   }
+
+  @override
+  void dispose() {
+    _link.dispose();
+    super.dispose();
+  }
 }
 
 ////////////////////////////////
